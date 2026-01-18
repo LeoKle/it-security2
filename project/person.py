@@ -66,4 +66,4 @@ class Person(PersonInterface):
 
         print(f"{self.name}: computed shared secret {self.shared_secret}")
 
-        server.post_message(peer_name, Message(self.IK_priv, EK_pub))
+        server.post_message(peer_name, Message(self.IK_pub, EK_pub))
