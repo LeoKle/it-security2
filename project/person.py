@@ -5,7 +5,10 @@ from interfaces.server_interface import KeyBundle, Message, ServerInterface
 
 
 class Person(PersonInterface):
-    def __init__(self, name, crypto: CryptoInterface = SimpleCrypto()):
+    def __init__(self, name, crypto: CryptoInterface = None):
+        if not crypto:
+            crypto = SimpleCrypto()
+
         self.name = name
         self.crypto = crypto
 

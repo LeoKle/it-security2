@@ -1,11 +1,13 @@
+from crypto import RealCrypto
 from person import Person
 from server import Server
 
 if __name__ == "__main__":
+    crypto = RealCrypto()
     server = Server()
 
-    alice = Person("alice")
-    bob = Person("bob")
+    alice = Person("alice", crypto=crypto)
+    bob = Person("bob", crypto=crypto)
 
     bob.publish_prekeys(server)
 
