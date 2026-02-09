@@ -15,9 +15,7 @@ class Person(PersonInterface):
         self.IK_priv, self.IK_pub = self.crypto.generate_keypair()
         # used when responding
         self.SPK_priv, self.SPK_pub = self.crypto.generate_keypair()
-        self.OPK_priv, self.OPK_pub = (
-            self.crypto.generate_keypair()
-        )  # FIXME: delete after use
+        self.OPK_priv, self.OPK_pub = self.crypto.generate_keypair()
 
         self.shared_secret = None
 

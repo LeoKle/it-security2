@@ -6,12 +6,13 @@ if __name__ == "__main__":
     crypto = RealCrypto()
     server = Server()
 
-    alice = Person("alice", crypto=crypto)
     bob = Person("bob", crypto=crypto)
 
     bob.publish_prekeys(server)
 
+    alice = Person("alice", crypto=crypto)
     alice.initiate_x3dh("bob", server)
+
     bob.receive_x3dh(server)
 
     if (

@@ -35,7 +35,5 @@ class RealCrypto(CryptoInterface):
     def kdf(self, *secrets):
         material = b"".join(secrets)
         return HKDF(
-            algorithm=hashes.SHA256(),
-            length=32,
-            salt=None,
+            algorithm=hashes.SHA256(), length=32, salt=None, info="X3DH Demo"
         ).derive(material)
